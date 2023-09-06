@@ -40,10 +40,19 @@ Route::controller(ApiController::class)->group(function () {
     Route::post('/register', 'register');
 
     // post related api
-    Route::get('/joblist', 'joblist');
-    Route::get('/jobApply', 'jobApply')->middleware(['auth:sanctum','role:user']);
-    Route::get('/notApprovejoblist', 'notApprovejoblist');
+    Route::get('/joblist', 'joblist')->middleware(['auth:sanctum','role:admin|employer']);
+    Route::get('/jobApply', 'jobApply')->middleware(['auth:sanctum','role:user']);// cv don't post (problem)
+    Route::get('/pendingJoblist', 'pendingJoblist')->middleware(['auth:sanctum']);
     Route::put('/forApprovejob', 'forApprovejob')->middleware(['auth:sanctum','role:admin']);
     Route::post('/jobPost', 'jobPost')->middleware(['auth:sanctum','role:admin|employer']);
+    Route::post('/appliedSpecificeJob', 'appliedSpecificeJob')->middleware(['auth:sanctum','role:admin|employer']);
+    Route::get('/totalJobPost','totalJobPost')->middleware(['auth:sanctum','role:admin|employer']);
+
+    // user related api
+    route::get('/totalUser','totalUser')->middleware(['auth:sanctum','role:admin']);
+    route::get('/totalEmploye','totalEmploye')->middleware(['auth:sanctum','role:admin']);
+    route::put('/banUser','banUser')->middleware(['auth:sanctum','role:admin']);
+    route::put('/activeUser','activeUser')->middleware(['auth:sanctum','role:admin']);
 
 });
+

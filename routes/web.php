@@ -30,8 +30,10 @@ Route::middleware(['auth', 'is_ban'])->prefix('/daseboard')->group(function () {
         Route::get('/postEdit/{id}', 'postEdit')->name('.edit');
         
         Route::middleware(["role:employer|admin"])->get('/postForm', 'postForm')->name('.postForm');
+
         Route::middleware(["role:employer|admin"])->post('/addPost', 'addPost')->name('.add');
         Route::middleware(["role:employer|admin"])->get('/allPost', 'allPost')->name('.all');
+        
         Route::middleware(["role:employer|admin"])->post('/postUpdated/{id}', 'postUpdated')->name('.update');
         route::middleware('role:admin')->get('/approval', 'postApproval')->name('.approval');
         route::middleware('role:admin')->get('/approve/{id}', 'postApprove')->name('.approve');

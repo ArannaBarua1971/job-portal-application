@@ -16,10 +16,10 @@
                     <p> <span style="font-size: 20px">certificates </span> :- {!! $user->certificates !!}</p>
                     <hr>
                     <p>Social links :</p>
-                    <p> <span style="font-size: 20px">email </span> :- <a href="{{ $user->facebook }}">{{ $user->facebook }}</a></p>
-                    <p> <span style="font-size: 20px">email </span> :- <a href="{{ $user->twitter }}">{{ $user->twitter }}</a></p>
-                    <p> <span style="font-size: 20px">email </span> :- <a href="{{ $user->youtube }}">{{ $user->youtube }}</a></p>
-                    <p> <span style="font-size: 20px">email </span> :- <a href="{{ $user->whatsapp }}">{{ $user->whatsapp }}</a></p>
+                    <p> <span style="font-size: 20px">facebook </span> :- <a href="{{ $user->facebook }}">{{ $user->facebook }}</a></p>
+                    <p> <span style="font-size: 20px">twitter </span> :- <a href="{{ $user->twitter }}">{{ $user->twitter }}</a></p>
+                    <p> <span style="font-size: 20px">youtube </span> :- <a href="{{ $user->youtube }}">{{ $user->youtube }}</a></p>
+                    <p> <span style="font-size: 20px">whatsapp </span> :- <a href="{{ $user->whatsapp }}">{{ $user->whatsapp }}</a></p>
                 </div>
 
             </div>

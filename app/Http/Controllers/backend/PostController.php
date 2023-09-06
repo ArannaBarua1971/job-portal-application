@@ -81,6 +81,7 @@ class PostController extends Controller
             return view('layouts.backend.allJobPost', compact('allJobPost'));
         }
     }
+    
     public function postDetail($id)
     {
         $jobPost = JobPost::where('id', $id)->first();
